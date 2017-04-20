@@ -325,6 +325,56 @@ apache:
                     sethandler: 'proxy:fcgi://127.0.0.1:9000'
                     custom_fragment: ''
                     provider: filesmatch
+        y-top-virtual-host:
+            servername: y-top.dev
+            serveraliases:
+                - www.y-top.dev
+            docroot: /var/www/y-top/web
+            port: '80'
+            setenvif:
+                - 'Authorization "(.*)" HTTP_AUTHORIZATION=$1'
+            custom_fragment: ''
+            ssl: '0'
+            ssl_cert: ''
+            ssl_key: ''
+            ssl_chain: ''
+            ssl_certs_dir: ''
+            ssl_protocol: ''
+            ssl_cipher: ''
+            directories:
+                avd_f7w0i65xofwp:
+                    path: /var/www/g-top/web
+                    directoryindex: 'index.php app.dev'
+                    options:
+                        - Indexes
+                        - FollowSymlinks
+                        - MultiViews
+                    allow_override:
+                        - All
+                    require:
+                        - 'all granted'
+                    custom_fragment: ''
+                    provider: directory
+            files_match:
+                avfm_h05a2thksghj:
+                    path: (app_dev|config)\.php$
+                    sethandler: 'proxy:fcgi://127.0.0.1:9000'
+                    setenv:
+                        - 'APP_ENV dev'
+                    custom_fragment: ''
+                    provider: filesmatch
+                avfm_nanveg70c5r3:
+                    path: app\.php$
+                    sethandler: 'proxy:fcgi://127.0.0.1:9000'
+                    setenv:
+                        - 'APP_ENV prod'
+                    custom_fragment: ''
+                    provider: filesmatch
+                avfm_xaa9x4i9f9t0:
+                    path: \.php$
+                    sethandler: 'proxy:fcgi://127.0.0.1:9000'
+                    custom_fragment: ''
+                    provider: filesmatch
 letsencrypt:
     install: '1'
     settings:
@@ -440,6 +490,9 @@ mariadb:
             sql: ''
         mariadbnd_3iovjwrlaqnz:
             name: vipsport
+            sql: ''
+        mariadbnd_4iovjwrlaqnz:
+            name: ytop
             sql: ''
     grants:
         mariadbng_gfn4s254ir2w:
