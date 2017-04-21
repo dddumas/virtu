@@ -244,7 +244,7 @@ apache:
             directories:
                 avd_f7w0i65xofwp:
                     path: /var/www/g-top/web
-                    directoryindex: 'index.php app.dev'
+                    directoryindex: 'index.php app.php'
                     options:
                         - Indexes
                         - FollowSymlinks
@@ -294,7 +294,7 @@ apache:
             directories:
                 avd_f7w0i65xofwp:
                     path: /var/www/vipsport/web
-                    directoryindex: 'index.php app.dev'
+                    directoryindex: 'index.php app.php'
                     options:
                         - Indexes
                         - FollowSymlinks
@@ -342,9 +342,9 @@ apache:
             ssl_protocol: ''
             ssl_cipher: ''
             directories:
-                avd_f7w0i65xofwp:
-                    path: /var/www/g-top/web
-                    directoryindex: 'index.php app.dev'
+                ybb_f1w8i65xofwp:
+                    path: /var/www/y-top/web
+                    directoryindex: 'index.php app.php'
                     options:
                         - Indexes
                         - FollowSymlinks
