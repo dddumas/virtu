@@ -18,7 +18,7 @@ machines.each do |i, machine|
     machine_id.ssh.username         = "#{ssh_username}"
 
     machine_id.vm.provider :rackspace do |rs, override|
-      override.vm.synced_folder ".", "/vagrant", type: "rsync"
+      override.vm.synced_folder ".", "/vagrant", type: "nfs"
       rs.username           = "#{provider['username']}"
       rs.api_key            = "#{provider['api_key']}"
       rs.image              = "#{provider['image']}"

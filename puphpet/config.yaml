@@ -21,7 +21,7 @@ vagrantfile:
                 machines:
                     vflm_htqas5j9bc7b:
                         id: gtop-project
-                        hostname: gtop-project
+                        hostname: g-top.test
                         network:
                             private_network: 92.168.56.201
                             forwarded_port:
@@ -120,9 +120,9 @@ nginx:
     upstreams: {  }
     vhosts:
         nxv_4qv1d2lxl8o7:
-            server_name: awesome.dev
+            server_name: awesome.test
             server_aliases:
-                - www.awesome.dev
+                - www.awesome.test
             www_root: /var/www/awesome
             listen_port: '80'
             client_max_body_size: 1m
@@ -226,9 +226,9 @@ apache:
         - rewrite
     vhosts:
         av_p4ly9cx3l216:
-            servername: g-top.dev
+            servername: g-top.test
             serveraliases:
-                - www.g-top.dev
+                - www.g-top.test
             docroot: /var/www/g-top/web
             port: '80'
             setenvif:
@@ -276,9 +276,9 @@ apache:
                     custom_fragment: ''
                     provider: filesmatch
         sd_tyyui9cx3l216:
-            servername: vipsport.dev
+            servername: vipsport.test
             serveraliases:
-                - www.vipsport.dev
+                - www.vipsport.test
             docroot: /var/www/vipsport/web
             port: '80'
             setenvif:
@@ -326,9 +326,9 @@ apache:
                     custom_fragment: ''
                     provider: filesmatch
         y-top-virtual-host:
-            servername: y-top.dev
+            servername: y-top.test
             serveraliases:
-                - www.y-top.dev
+                - www.y-top.test
             docroot: /var/www/y-top/web
             port: '80'
             setenvif:
@@ -390,6 +390,7 @@ php:
             - intl
             - xml
             - curl
+            - mbstring
         pear: {  }
         pecl: {  }
     ini:
